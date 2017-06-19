@@ -1,0 +1,32 @@
+
+Call:
+glm(formula = y ~ 1, family = poisson, data = d)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.4901  -0.6823   0.0605   0.7433   2.2721  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)
+(Intercept)   2.0580     0.0357    57.6   <2e-16
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 89.507  on 99  degrees of freedom
+Residual deviance: 89.507  on 99  degrees of freedom
+AIC: 477.3
+
+Number of Fisher Scoring iterations: 4
+
+
+
+
+Call:  glm(formula = y ~ 1, family = poisson, data = d) 
+
+Coefficients:
+(Intercept)  
+       2.06  
+
+Degrees of Freedom: 99 Total (i.e. Null);  99 Residual
+Null Deviance:	    89.5 
+Residual Deviance: 89.5 	AIC: 477 

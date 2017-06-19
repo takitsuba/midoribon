@@ -1,0 +1,11 @@
+# summary(delta1)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -12.60   -2.25    1.20    1.01    5.01   15.80 
+
+# lambda1 = 7.70
+# mll1      = -120.57
+# mean.mll1 = -122.94
+
+# lambda2 = 8.56
+# mll2      = -130.28
+# mean.mll2 = -123.69

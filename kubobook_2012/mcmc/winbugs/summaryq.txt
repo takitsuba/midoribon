@@ -1,0 +1,26 @@
+> summary(beta)
+
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -0.589  -0.287  -0.174  -0.178  -0.074   0.332 
+> summary(q)
+
+
+Iterations = 1:1200
+Thinning interval = 1 
+Number of chains = 1 
+Sample size per chain = 1200 
+
+1. Empirical mean and standard deviation for each variable,
+   plus standard error of the mean:
+
+          Mean             SD       Naive SE Time-series SE 
+       0.45714        0.03959        0.00114        0.00115 
+
+2. Quantiles for each variable:
+
+ 2.5%   25%   50%   75% 97.5% 
+0.378 0.430 0.459 0.483 0.536 
+
+> 1 / (1 + exp(mean(-beta)))
+
+[1] 0.45574

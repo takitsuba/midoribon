@@ -1,0 +1,14 @@
+model
+{
+	for (i in 1:N) {
+		Y[i] ~ dbin(q[i], 8) # 二項分布
+		logit(q[i]) <- beta + r[i] # 生存確率
+	}
+	beta ~ dnorm(0, 1.0E-4) # 無情報事前分布
+	for (i in 1:N) {
+		r[i] ~ dnorm(0, tau) # 階層事前分布
+	}
+	tau <- 1 / (s * s)	 # tau は分散の逆数
+	s ~ dunif(0, 1.0E+4) # 無情報事前分布
+}
+

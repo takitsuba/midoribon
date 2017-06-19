@@ -1,0 +1,13 @@
+Inference for Bugs model at "/home/kubo/public_html/stat/iwanami/fig/mcmc1/winbugs/model.bug.txt", fit using WinBUGS,
+ 3 chains, each with 2100 iterations (first 100 discarded), n.thin = 5
+ n.sims = 1200 iterations saved
+           mean    sd   2.5%    25%    50%    75%  97.5%  Rhat n.eff
+beta     -0.178 0.159 -0.484 -0.287 -0.174 -0.074  0.145 1.002   770
+deviance 76.497 1.444 75.500 75.590 75.940 76.792 80.790 1.003  1200
+
+For each parameter, n.eff is a crude measure of effective sample size,
+and Rhat is the potential scale reduction factor (at convergence, Rhat=1).
+
+DIC info (using the rule, pD = Dbar-Dhat)
+pD = 1.0 and DIC = 77.5
+DIC is an estimate of expected predictive error (lower deviance is better).

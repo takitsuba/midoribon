@@ -1,0 +1,49 @@
+> d0 <- data.frame(
++ 	Plot = factor(c(1, 1, 2, 2)),
++ 	Spc = factor(c("A", "B", "A", "B")),
++ 	y = c(52, 31, 27, 15)
++ )
+> 
+> d <- reshape(d0, timevar= "Spc", idvar = "Plot", direction = "wide")
+> rownames(d) <- 1:nrow(d)
+> print(d)
+  Plot y.A y.B
+1    1  52  31
+2    2  27  15
+> 
+> fit.b <- glm(cbind(y.B, y.A) ~ Plot, data = d, family = binomial)
+> print(fit.b)
+
+Call:  glm(formula = cbind(y.B, y.A) ~ Plot, family = binomial, data = d) 
+
+Coefficients:
+(Intercept)        Plot2  
+   -0.51726     -0.07053  
+
+Degrees of Freedom: 1 Total (i.e. Null);  0 Residual
+Null Deviance:	    0.03213 
+Residual Deviance: -5.995e-15 	AIC: 12.93 
+> 
+> d2 <- reshape(d, direction = "long", varying = c("y.A", "y.B"), timevar = "Spc")
+> d2$Spc <- factor(d2$Spc)
+> d2$id <- NULL
+> print(d2)
+    Plot Spc  y
+1.A    1   A 52
+2.A    2   A 27
+1.B    1   B 31
+2.B    2   B 15
+> 
+> fit.p <- glm(y ~ Spc * Plot, data = d2, family = poisson)
+> print(fit.p)
+
+Call:  glm(formula = y ~ Spc * Plot, family = poisson, data = d2) 
+
+Coefficients:
+(Intercept)         SpcB        Plot2   SpcB:Plot2  
+    3.95124     -0.51726     -0.65541     -0.07053  
+
+Degrees of Freedom: 3 Total (i.e. Null);  0 Residual
+Null Deviance:	    22.55 
+Residual Deviance: 3.553e-15 	AIC: 28.77 
+> 

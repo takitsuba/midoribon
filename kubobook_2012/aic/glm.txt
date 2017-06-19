@@ -1,0 +1,12 @@
+# summary(delta)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+-0.0015  0.1210  0.4910  1.0900  1.3700  9.0000 
+
+# summary(d1)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.0591  0.2420  0.5440  0.6820  4.7400 
+
+# summary(d2)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+-4.2700 -0.6980 -0.2440 -0.5420 -0.0630  0.0093 
+

@@ -1,0 +1,25 @@
+model
+{
+	# j = 1: GLMM, no NA data
+	# j = 2: GLMM, NA data
+	# j = 3: CAR,  no NA data
+	# j = 4: CAR,  NA data
+	Tau.noninformative <- 1.0E-4
+	S.max <- 1.0E+4
+	for (i in 1:N.site) {
+		for (j in 1:4) {
+			Y[i, j] ~ dpois(mean [i, j])
+			log(mean[i, j]) <- beta[j] + r[j, i]
+		}
+		for (j in 1:2) {
+			r[j, i] ~ dnorm(0.0, tau[j])
+		}
+	}
+	r[3, 1:N.site] ~ car.normal(Adj[], Weights[], Num[], tau[3])
+	r[4, 1:N.site] ~ car.normal(Adj[], Weights[], Num[], tau[4])
+	for (j in 1:4) {
+		beta[j] ~ dnorm(0, Tau.noninformative)
+		tau[j] <- 1 / (s[j] * s[j])
+		s[j] ~ dunif(0, S.max)
+	}
+}

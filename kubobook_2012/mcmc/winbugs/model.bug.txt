@@ -1,0 +1,9 @@
+model
+{
+	Tau.noninformative <- 1.0E-4
+	for (i in 1:N) {
+		Y[i] ~ dbin(q, Size)
+	}
+	logit(q) <- beta
+	beta ~ dnorm(0, Tau.noninformative)
+}

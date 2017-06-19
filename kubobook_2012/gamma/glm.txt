@@ -1,0 +1,21 @@
+
+Call:
+glm(formula = y ~ log(x), family = Gamma(link = "log"), data = d)
+
+Deviance Residuals: 
+   Min      1Q  Median      3Q     Max  
+-1.447  -0.491  -0.151   0.259   1.068  
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)  -1.0403     0.1188   -8.76  1.6e-11
+log(x)        0.6833     0.0684    9.99  2.6e-13
+
+(Dispersion parameter for Gamma family taken to be 0.32509)
+
+    Null deviance: 35.368  on 49  degrees of freedom
+Residual deviance: 17.251  on 48  degrees of freedom
+AIC: -110.9
+
+Number of Fisher Scoring iterations: 6
+

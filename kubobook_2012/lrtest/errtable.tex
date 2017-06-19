@@ -1,0 +1,20 @@
+	\tabcolsep = 0.2em
+	\newcommand{\tabbox}[1]{\begin{minipage}{32mm}#1\end{minipage}}
+	\begin{tabular}{ccc}
+		%\hline
+			& \multicolumn{2}{l}{\hspace{1em} 観察された逸脱度差 $\DD$ は} \\
+			↓\NullH は
+			& \tabbox{「めったにない差」 \\ \ (\NullH を棄却)}
+			& \tabbox{「よくある差」 \\ (棄却できない)}
+			\\ 
+		\hline
+		真のモデルである
+			& \strong{第一種の過誤}
+			& (問題なし) \\
+		\hline
+		真のモデルではない
+			& (問題なし)
+			& \strong{第二種の過誤} \\
+		\hline
+	\end{tabular}
+
